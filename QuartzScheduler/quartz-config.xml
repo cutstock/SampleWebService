@@ -5,5 +5,23 @@
     <overwrite-existing-data>true</overwrite-existing-data>
   </processing-directives>
   <schedule>
+    <job>
+      <name>JOB_QUEUEJOB</name>
+      <description>Job that reads messages of specified type</description>
+      <job-type>BussinesJobs.QueueJob, BussinesJobs</job-type>
+      <job-data-map>
+        <entry>
+          <key>MessageType</key>
+          <value>Test</value>
+        </entry>
+      </job-data-map>
+    </job>
+    <trigger>
+      <cron>
+        <name>TR_JOB_QUEUEJOB</name>
+        <job-name>JOB_QUEUEJOB</job-name>
+        <cron-expression>0/5 * * 1/1 * ? *</cron-expression>
+      </cron>
+    </trigger>
   </schedule>
 </job-scheduling-data>

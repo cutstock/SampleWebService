@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{4498E16C-89D9-4955-95D1-C75F81894AD5}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzScheduler", "QuartzScheduler\QuartzScheduler.csproj", "{4BA0CAFD-777E-4AAC-96EF-A580CFAAC293}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqManager", "MsmqManager\MsmqManager.csproj", "{37BCEE06-2518-4061-9110-B1C01D6514E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinesJobs", "BussinesJobs\BussinesJobs.csproj", "{56F4DAA5-C4DD-493D-8396-A76F79EC6AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobRunner", "JobRunner\JobRunner.csproj", "{E5E0EC56-3521-472D-A86B-CFC1F05BFD3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F4DAA5-C4DD-493D-8396-A76F79EC6AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F4DAA5-C4DD-493D-8396-A76F79EC6AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F4DAA5-C4DD-493D-8396-A76F79EC6AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F4DAA5-C4DD-493D-8396-A76F79EC6AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E0EC56-3521-472D-A86B-CFC1F05BFD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E0EC56-3521-472D-A86B-CFC1F05BFD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E0EC56-3521-472D-A86B-CFC1F05BFD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E0EC56-3521-472D-A86B-CFC1F05BFD3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

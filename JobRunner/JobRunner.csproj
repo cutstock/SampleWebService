@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77D6DE29-0DCA-459D-9DDA-690C695F6A2C}</ProjectGuid>
+    <ProjectGuid>{E5E0EC56-3521-472D-A86B-CFC1F05BFD3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bootstrap</RootNamespace>
-    <AssemblyName>Bootstrap</AssemblyName>
+    <RootNamespace>JobRunner</RootNamespace>
+    <AssemblyName>JobRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
@@ -42,8 +45,10 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.3.3\lib\net40\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,22 +57,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Impl\AuthService.cs" />
-    <Compile Include="UnityConfig.cs" />
+    <Compile Include="Configure\Entities\BaseQuartzConfigEntity.cs" />
+    <Compile Include="Configure\Entities\JobConfig.cs" />
+    <Compile Include="Configure\Entities\JobParamConfig.cs" />
+    <Compile Include="Configure\Entities\JobTypeConfig.cs" />
+    <Compile Include="Configure\Entities\JobTypeParamConfig.cs" />
+    <Compile Include="Configure\Entities\SchedulerConfig.cs" />
+    <Compile Include="Configure\Entities\TriggerConfig.cs" />
+    <Compile Include="Configure\Entities\TriggerType.cs" />
+    <Compile Include="Core\CustomScheduler.cs" />
+    <Compile Include="Core\CustomSchedulerFactory.cs" />
+    <Compile Include="Core\IConfigurationProvider.cs" />
+    <Compile Include="Core\Impl\BaseDbConfigurationProvider.cs" />
+    <Compile Include="Core\Listeners\JobListener.cs" />
+    <Compile Include="Core\Listeners\SchedulerListener.cs" />
+    <Compile Include="Core\Listeners\TriggerListener.cs" />
+    <Compile Include="Model\Entities.cs" />
+    <Compile Include="Core\Unity\UnityJobFactory.cs" />
+    <Compile Include="Core\Unity\UnitySchedulerFactory.cs" />
+    <Compile Include="Plugins\Db\DbConfiguratorJob.cs" />
+    <Compile Include="Plugins\Db\DbConfiguratorPlugin.cs" />
+    <Compile Include="Plugins\Db\IDbConfiguratorPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{b75b23e2-33f2-4bde-ba13-7cb30ba8c731}</Project>
+      <Project>{B75B23E2-33F2-4BDE-BA13-7CB30BA8C731}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MsmqManager\MsmqManager.csproj">
-      <Project>{37bcee06-2518-4061-9110-b1c01d6514e7}</Project>
-      <Name>MsmqManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,19 +1,16 @@
 ﻿using Common.Logging;
 using Quartz;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
 using Common.Helpers;
 using Common.Services;
 using Bootstrap;
 using Microsoft.Practices.Unity;
 using System.Security.Authentication;
+using Common;
+using Common.Environment;
+using Common.Environment.Impl;
+using JobRunner.Core;
+using log4net.Config;
 
 namespace QuartzScheduler
 {
@@ -30,6 +27,7 @@ namespace QuartzScheduler
 
         public SchedulerHost(ServiceContext context)
         {
+            XmlConfigurator.Configure();
             // конфигурируем приложение
             UnityConfig.RegisterComponents(Configure);
         }
@@ -84,15 +82,15 @@ namespace QuartzScheduler
         private void Configure(IUnityContainer container)
         {
             // инициализируем Environment
-            //container.RegisterType<IOmsEnvironmentInfoProvider, SvcOmsEnvironmentInfoProvider>(new ContainerControlledLifetimeManager());
-            //OmsEnvironment.Init(container.Resolve<IOmsEnvironmentInfoProvider>());
+            container.RegisterType<IEnvironmentInfoProvider, SvcEnvironmentInfoProvider>(new ContainerControlledLifetimeManager());
+            SvcEnvironment.Init(container.Resolve<IEnvironmentInfoProvider>());
 
             AuthenticateService(container);
 
             // инициализируем job-ы
-            //container.RegisterType<ISchedulerFactory, CustomSchedulerFactory>(new ContainerControlledLifetimeManager());
-            //container.RegisterType<IScheduler>(new InjectionFactory(c => c.Resolve<ISchedulerFactory>().GetScheduler()));
-            //container.RegisterType<IConfigurationProvider, DbConfigurationProvider>();
+            container.RegisterType<ISchedulerFactory, CustomSchedulerFactory>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IScheduler>(new InjectionFactory(c => c.Resolve<ISchedulerFactory>().GetScheduler()));
+            container.RegisterType<IConfigurationProvider, DbConfigurationProvider>();
 
             _scheduler = container.Resolve<IScheduler>();
         }

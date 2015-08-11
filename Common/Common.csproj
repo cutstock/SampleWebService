@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Model.cs" />
+    <Compile Include="SvcEnvironment.cs" />
+    <Compile Include="Environment\IEnvironmentInfoProvider.cs" />
+    <Compile Include="Environment\Impl\SvcEnvironmentInfoProvider.cs" />
+    <Compile Include="Environment\IUserNameHandler.cs" />
     <Compile Include="Helpers\AppConfigHelper.cs" />
     <Compile Include="IQueueManager.cs" />
     <Compile Include="NamespaceHelper.cs" />
@@ -51,9 +57,7 @@
     <Compile Include="Services\IAuthService.cs" />
     <Compile Include="Services\ServiceContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
