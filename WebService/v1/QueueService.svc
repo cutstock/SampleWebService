@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebService.v1.QueueService" Factory="WebService.WcfServiceFactory" %>

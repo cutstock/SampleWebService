@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{4498E16C-89D9-4955-95D1-C75F81894AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B75B23E2-33F2-4BDE-BA13-7CB30BA8C731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap", "Bootstrap\Bootstrap.csproj", "{77D6DE29-0DCA-459D-9DDA-690C695F6A2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApplication", "AdminApplication\AdminApplication.csproj", "{FD383B5E-083E-4D1D-ACFA-D4864FE9CECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzScheduler", "QuartzScheduler\QuartzScheduler.csproj", "{4BA0CAFD-777E-4AAC-96EF-A580CFAAC293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqManager", "MsmqManager\MsmqManager.csproj", "{37BCEE06-2518-4061-9110-B1C01D6514E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4498E16C-89D9-4955-95D1-C75F81894AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4498E16C-89D9-4955-95D1-C75F81894AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4498E16C-89D9-4955-95D1-C75F81894AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4498E16C-89D9-4955-95D1-C75F81894AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75B23E2-33F2-4BDE-BA13-7CB30BA8C731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75B23E2-33F2-4BDE-BA13-7CB30BA8C731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75B23E2-33F2-4BDE-BA13-7CB30BA8C731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75B23E2-33F2-4BDE-BA13-7CB30BA8C731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D6DE29-0DCA-459D-9DDA-690C695F6A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D6DE29-0DCA-459D-9DDA-690C695F6A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D6DE29-0DCA-459D-9DDA-690C695F6A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D6DE29-0DCA-459D-9DDA-690C695F6A2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD383B5E-083E-4D1D-ACFA-D4864FE9CECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD383B5E-083E-4D1D-ACFA-D4864FE9CECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD383B5E-083E-4D1D-ACFA-D4864FE9CECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD383B5E-083E-4D1D-ACFA-D4864FE9CECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA0CAFD-777E-4AAC-96EF-A580CFAAC293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA0CAFD-777E-4AAC-96EF-A580CFAAC293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA0CAFD-777E-4AAC-96EF-A580CFAAC293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA0CAFD-777E-4AAC-96EF-A580CFAAC293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37BCEE06-2518-4061-9110-B1C01D6514E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal
